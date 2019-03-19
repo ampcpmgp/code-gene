@@ -1,7 +1,8 @@
 const { app, BrowserWindow } = require("electron");
+
 let win;
 function createWindow() {
-    win = new BrowserWindow({ width: 800, height: 600 });
+    win = new BrowserWindow({ width: 800, height: 660 });
     win.loadURL(`file://${__dirname}/index.html`);
     win.on("closed", () => { win = null; });
 }
@@ -16,3 +17,9 @@ app.on("activate", () => {
         createWindow();
     }
 });
+
+var App = {
+    showErrorBox: function(){
+		dialog.showErrorBox('Error Box Example', 'Error Box');
+	}
+};

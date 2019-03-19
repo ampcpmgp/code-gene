@@ -1,13 +1,13 @@
 {
-  "name": "electron_first_app",
+  "name": "code-generator",
   "version": "1.0.0",
-  "description": "My first Electron app",
+  "description": "code generator",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "teruzoufox",
-  "license": "Private",
+  "license": "MIT",
   "devDependencies": {
     "electron": "^1.6.1"
   }
