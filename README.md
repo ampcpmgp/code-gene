@@ -1,5 +1,10 @@
 # 使い方
-## 起動方法
+## インストール
+```bash:
+$ npm install electron@1.6.1 --save-dev
+```
+
+## 起動
 ```bash:
 $ ./node_modules/.bin/electron .
 ```
