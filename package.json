@@ -1,0 +1,14 @@
+{
+  "name": "electron_first_app",
+  "version": "1.0.0",
+  "description": "My first Electron app",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "teruzoufox",
+  "license": "Private",
+  "devDependencies": {
+    "electron": "^1.6.1"
+  }
+}
