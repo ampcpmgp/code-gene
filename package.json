@@ -9,6 +9,7 @@
   "author": "teruzoufox",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^1.6.1"
+    "electron": "^1.6.1",
+    "electron-packager": "^8.5.2"
   }
 }
