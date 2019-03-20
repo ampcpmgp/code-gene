@@ -1,18 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // formのsubmit時の動作を定義する
-    document.getElementById("comment-form").onsubmit = () => {
+    // formの[code generate]時の動作を定義する
+    document.getElementById("generate-form").onsubmit = () => {
         
         document.getElementById("generated-code").value = "";
 
-        // コメントを入力するinputを取得する
-        const commentInput = document.getElementById("comment-input");
+        // テンプレートを入力するinputを取得する
+        const templateInput = document.getElementById("template-input");
         
-        if (commentInput.value.trim() === "") {
-            // コメントが入力されていない場合は何もしない
+        if (templateInput.value.trim() === "") {
+            // テンプレートが入力されていない場合は何もしない
+            document.getElementById("generated-code").value = "テンプレートを入力してください。";
             return false;
         }
 
-        var templete_text = commentInput.value;
+        var templete_text = templateInput.value;
         var elem_nums = [1,2,3];
         var num_texts_hash = [];
 
@@ -24,36 +25,37 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        var elem_max;
+        // 要素の数を取得する
+        var elem_size;
         for (elem_num in num_texts_hash) {
-            if(elem_max) {
-                if (num_texts_hash[elem_num].length != elem_max) {
+            if(elem_size) {
+                if (num_texts_hash[elem_num].length != elem_size) {
+                    document.getElementById("generated-code").value = "要素の数を揃えてください。";
                     return false;
                 }
             } else {
-                elem_max = num_texts_hash[elem_num].length;
+                elem_size = num_texts_hash[elem_num].length;
             }
         }
 
+        // 要素数分のテンプレートをhashにセットする（要素indexごと）
         var index_text_hash = [];
-
-        Array.from({length: elem_max}, (v, k) => k).forEach(function(wk_index){
+        Array.from({length: elem_size}, (v, k) => k).forEach(function(wk_index){
             index_text_hash[wk_index] = templete_text;
         });
 
-        var generated_text = "";
-
+        // 要素1、2、…ごとに<Subxx>を置換していく
         for (elem_num in num_texts_hash) {
-           var index = 0;
+           var index = 0; // 要素番号ごとにindexをカウントする
             num_texts_hash[elem_num].forEach(function(text){
-                index_text_hash[index] = index_text_hash[index].replace(`<Sub${elem_num}>`, text);
+                // <Subxx>を要素に置換する
+                index_text_hash[index] = index_text_hash[index].split(`<Sub${elem_num}>`).join(text);
                 index ++;
             });
         }
 
-        for (wk_index in index_text_hash) {
-            generated_text += index_text_hash[wk_index] + "\n";
-        }
+        // 配列を改行で連結して出力用文字列にセット
+        const generated_text = index_text_hash.join("\n");
 
         document.getElementById("generated-code").value = generated_text;
 

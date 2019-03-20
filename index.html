@@ -12,10 +12,10 @@
 
 <body style="margin-left:20px">
   <h4>code generator</h4>
-  <form id="comment-form">
+  <form id="generate-form">
     <div class="main-area">
       <div class='inout-area' style="float:left; height:540px;">
-        <textarea id="comment-input" placeholder="テンプレートを入力" cols="30" style="height:49%;"></textarea>
+        <textarea id="template-input" placeholder="テンプレートを入力" cols="30" style="height:49%;"></textarea>
         <br />
         <textarea id="generated-code" placeholder="ここに出力されます" cols="30" style="height:50%;"></textarea>
       </div>
@@ -41,7 +41,7 @@
       <input type="submit" value="code generate!" class="btn btn-primary" />
     </div>
   </form>
-  <ul id="comments"></ul>
+  <ul id="templates"></ul>
   <script src="renderer.js"></script>
 </body>
 
