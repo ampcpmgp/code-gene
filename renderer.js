@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         var templete_text = templateInput.value;
-        var elem_nums = [1,2,3];
+        var elem_num = 4;
+        var elem_nums = [...Array(elem_num).keys()].map(i => ++i);
         var num_texts_hash = [];
 
         // 要素番号ごとに、各テキストエリアの内容を配列で持つ
