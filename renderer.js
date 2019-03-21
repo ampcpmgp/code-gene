@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (templateInput.value.trim() === "") {
             // テンプレートが入力されていない場合は何もしない
             document.getElementById("generated-code").value = "テンプレートを入力してください。";
+            document.getElementById("generated-code").focus();
             return false;
         }
 
@@ -30,7 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
         for (elem_num in num_texts_hash) {
             if(elem_size) {
                 if (num_texts_hash[elem_num].length != elem_size) {
-                    document.getElementById("generated-code").value = "要素の数を揃えてください。";
+                    var num_length_string = '';
+                    for(key in num_texts_hash) {
+                        num_length_string += `要素${key} : ${num_texts_hash[key].length}\n`;
+                    }
+                    document.getElementById("generated-code").value = `要素の数を揃えてください。\n\n${num_length_string}`;
+                    document.getElementById("generated-code").focus();
                     return false;
                 }
             } else {
@@ -58,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const generated_text = index_text_hash.join("\n");
 
         document.getElementById("generated-code").value = generated_text;
-
+        document.getElementById("generated-code").focus();
         return false;
     }
 });

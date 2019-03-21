@@ -1,0 +1,52 @@
+body {
+  -webkit-app-region: drag;
+  margin: 20px 24px;
+  background-color: #27313D;
+  background-image: url('../images/texture.png');
+}
+
+textarea, input {
+  color: #F5F5F5 !important;
+  background-color: #27313D !important;
+  background-image: url('../images/texture.png') !important;
+}
+
+.inout-area {
+  float:left;
+  height:540px; 
+}
+
+.btn-primary {
+  padding:10px 20px;
+  background-color: #60C4B0;
+  background-image: url('../images/texture.png');
+  border-color: #26AE90;
+  color: #F5F5F5;
+  font-size:16px;
+}
+.btn-primary:hover {
+  background-color: #26AE90;
+  border-color: #26AE90;
+}
+
+#template-input {
+  height:269px;
+}
+
+#generated-code{
+  height:269px;
+}
+
+.element-area {
+  height:540px;
+  margin-left:30px;
+}
+
+.element-area textarea {
+  height:504px !important;
+}
+
+.element-unit {
+  float:left;
+  height:100%;
+}
