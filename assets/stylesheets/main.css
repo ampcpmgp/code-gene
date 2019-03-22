@@ -51,8 +51,12 @@ textarea, input {
   margin-left: 4px;
 }
 
-.element-area textarea {
+.element-input {
   height: calc(100% - 34px - 4px) !important;
+}
+
+.element-sub {
+  margin-top: 4px;
 }
 
 .element-unit {
