@@ -30,23 +30,33 @@ textarea, input {
 }
 
 #template-input {
-  height:269px;
+  height: 50%;
 }
 
 #generated-code{
-  height:269px;
+  margin-top: 4px;
+  height: calc(50% - 4px);
+}
+
+.inout-area {
+  float: left;
+  height: 540px;
+  width: 30%;
 }
 
 .element-area {
-  height:540px;
-  margin-left:30px;
+  float: left;
+  height: 540px;
+  width: calc(70% - 4px);
+  margin-left: 4px;
 }
 
 .element-area textarea {
-  height:504px !important;
+  height: calc(100% - 34px - 4px) !important;
 }
 
 .element-unit {
-  float:left;
-  height:100%;
+  float: left;
+  height: 100%;
+  width: 25%;
 }
