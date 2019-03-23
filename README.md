@@ -14,5 +14,5 @@ $ ./node_modules/.bin/electron .
 # パッケージマネージャインストール
 $ npm install electron-packager@8.5.2 --save-dev
 # パッケージ化実行
-$ ./node_modules/.bin/electron-packager . code-generator --platform=darwin,win32 --arch=x64 --electronVersion=0.36.1
+$ ./node_modules/.bin/electron-packager . CodeGene --platform=darwin,win32 --arch=x64 --electronVersion=0.36.1
 ```
