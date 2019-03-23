@@ -1,16 +1,16 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
     // formの[code generate]時の動作を定義する
-    document.getElementById("generate-form").onsubmit = () => {
+    document.getElementById('generate-form').onsubmit = () => {
         
-        document.getElementById("generated-code").value = "";
+        document.getElementById('generated-code').value = '';
 
         // テンプレートを入力するinputを取得する
-        const templateInput = document.getElementById("template-input");
+        const templateInput = document.getElementById('template-input');
         
-        if (templateInput.value.trim() === "") {
+        if (templateInput.value.trim() === '') {
             // テンプレートが入力されていない場合は何もしない
-            document.getElementById("generated-code").value = "テンプレートを入力してください。";
-            document.getElementById("generated-code").focus();
+            document.getElementById('generated-code').value = 'テンプレートを入力してください。';
+            document.getElementById('generated-code').focus();
             return false;
         }
 
@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     for(key in num_texts_hash) {
                         num_length_string += `要素${key} : ${num_texts_hash[key].length}\n`;
                     }
-                    document.getElementById("generated-code").value = `要素の数を揃えてください。\n\n${num_length_string}`;
-                    document.getElementById("generated-code").focus();
+                    document.getElementById('generated-code').value = `要素の数を揃えてください。\n\n${num_length_string}`;
+                    document.getElementById('generated-code').focus();
                     return false;
                 }
             } else {
@@ -62,10 +62,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // 配列を改行で連結して出力用文字列にセット
-        const generated_text = index_text_hash.join("\n");
+        const generated_text = index_text_hash.join('\n');
 
-        document.getElementById("generated-code").value = generated_text;
-        document.getElementById("generated-code").focus();
+        document.getElementById('generated-code').value = generated_text;
+        document.getElementById('generated-code').focus();
         return false;
     }
 });
@@ -81,7 +81,7 @@ function copyToClipboard(element_num) {
     // コピー対象のテキストを選択する
     copyTarget.select();
     // 選択しているテキストをクリップボードにコピーする
-    document.execCommand("Copy");
+    document.execCommand('Copy');
     // コピー済みの旨表示する
     document.getElementById(`element-sub-${element_num}`).value = 'Copied "<Sub1>"'
 }
