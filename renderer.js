@@ -74,3 +74,18 @@ document.addEventListener("DOMContentLoaded", () => {
 function check_sub(text, element_num) {
     return text.indexOf(`Sub${element_num}`) != -1;
 }
+
+function copyToClipboard(element_num) {
+    // コピー対象をJavaScript上で変数として定義する
+    var copyTarget = document.getElementById(`element-sub-${element_num}`);
+    // コピー対象のテキストを選択する
+    copyTarget.select();
+    // 選択しているテキストをクリップボードにコピーする
+    document.execCommand("Copy");
+    // コピー済みの旨表示する
+    document.getElementById(`element-sub-${element_num}`).value = 'Copied "<Sub1>"'
+}
+
+function clearElementSub(element_num) {
+    document.getElementById(`element-sub-${element_num}`).value = `<Sub${element_num}>`;
+}
