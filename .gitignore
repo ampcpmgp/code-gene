@@ -1,6 +1,6 @@
 .idea/
 .vscode/
 
-code-generator-darwin-x64/
-code-generator-win32-x64/
+CodeGene-darwin-x64/
+CodeGene-win32-x64/
 node_modules/
