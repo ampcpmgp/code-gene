@@ -51,6 +51,12 @@ textarea, input {
   margin-left: 4px;
 }
 
+.element-unit {
+  float: left;
+  height: 100%;
+  width: 25%;
+}
+
 .element-input {
   height: calc(100% - 34px - 4px) !important;
 }
@@ -59,8 +65,6 @@ textarea, input {
   margin-top: 4px;
 }
 
-.element-unit {
-  float: left;
-  height: 100%;
-  width: 25%;
+input.element-sub {
+  text-align: center !important;
 }
