@@ -83,7 +83,7 @@ function copyToClipboard(element_num) {
     // 選択しているテキストをクリップボードにコピーする
     document.execCommand('Copy');
     // コピー済みの旨表示する
-    document.getElementById(`element-sub-${element_num}`).value = 'Copied "<Sub1>"'
+    document.getElementById(`element-sub-${element_num}`).value = `Copied "<Sub${element_num}>"`
 }
 
 function clearElementSub(element_num) {
