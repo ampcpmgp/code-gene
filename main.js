@@ -4,8 +4,7 @@ let win;
 function createWindow() {
     win = new BrowserWindow({ 
         width: 1000, 
-        height: 664,
-        resizable: false
+        height: 700,
     });
     win.loadURL(`file://${__dirname}/index.html`);
     win.on("closed", () => { win = null; });
